@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build: 
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    command: realize start
+    ports:
+      - "3000:3000"
+    volumes:
+      - "../:/go/src/app"
+    tty: true
