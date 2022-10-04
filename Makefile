@@ -14,7 +14,7 @@ up:
 down:
 	$(COMPOSE) down
 
-start: 
+start:
 	make up ARG=-d
 
 stop:
@@ -31,3 +31,9 @@ sh:
 
 clean:
 	$(COMPOSE) down -v --rmi all
+
+test:
+	$(COMPOSE) run --rm app go test
+
+go:
+	${COMPOSE} run --rm app go ${ARG}
